@@ -1,0 +1,15 @@
+.profile__overlay{
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    top:47px;
+    left: 47px;
+    z-index: 0;
+    background-image: url(../../../images/Vector_avatar.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.profile__avatar:hover .profile__overlay{
+    z-index: 2;
+}

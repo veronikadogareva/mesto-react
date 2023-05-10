@@ -1,0 +1,9 @@
+.popup__container_type_image {
+    background: none;
+    box-shadow: none;
+    border-radius: none;
+    margin: 0;
+    box-sizing: content-box;
+    max-width:max-content;
+    max-height:none;
+}
