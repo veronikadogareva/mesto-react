@@ -2,9 +2,9 @@ import React from 'react';
 import { api } from '../utils/api';
 import Card from './Card';
 function Main(props) {
-    const [userName, setUserName] = React.useState([]);
-    const [userDescription, setUserDescription] = React.useState([]);
-    const [userAvatar, setUserAvatar] = React.useState([]);
+    const [userName, setUserName] = React.useState("");
+    const [userDescription, setUserDescription] = React.useState("");
+    const [userAvatar, setUserAvatar] = React.useState("");
     const [cards, setCards] = React.useState([]);
     React.useEffect(() => {
         api.getUserInfo()
@@ -44,9 +44,9 @@ function Main(props) {
             <ul className="elements">
                 {cards.map((card) => {
                     return (
-                        <div key={card._id} >
+                        <li key={card._id} >
                             <Card card={card} onCardClick={props.onCardClick} />
-                        </div>
+                        </li>
                     );
                 })}
             </ul>
