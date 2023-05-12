@@ -33,7 +33,7 @@ function App() {
       <Header src={logo} alt='Логотип сайта Место' />
       <Main onAvatarClick={handleEditAvatarClick} onProfileClick={handleEditProfileClick} onNewCardClick={handleAddPlaceClick} onCardClick={handleCardClick} />
       <Footer />
-      <PopupWithForm name='profile' title="Редактировать профиль" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} textButton = "Сохранить">
+      <PopupWithForm name='profile' title="Редактировать профиль" isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} textButton="Сохранить">
         <input className="popup__input popup__input_info_name" id="name-input" name="name" placeholder="Имя"
           required minLength="2" maxLength="40" />
         <span className="popup__input-error name-input-error"></span>

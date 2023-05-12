@@ -5,7 +5,7 @@ function Card(props) {
         props.onCardClick(props.card);
     }
     return (
-        <li className="element">
+        <article className="element">
             <img className="element__image" src={props.card.link} onClick={handleClick} alt={props.card.name}/>
             <div className="element__group">
                 <h2 className="element__place">{props.card.name}</h2>
@@ -15,7 +15,7 @@ function Card(props) {
                 </div>
             </div>
             <button className="element__trash" type="button"></button>
-        </li>
+        </article>
     )
 }
 export default Card;
