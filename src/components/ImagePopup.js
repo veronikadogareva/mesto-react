@@ -1,5 +1,4 @@
 import React from 'react';
-
 function ImagePopup(props) {
     return (
         <section className={`popup popup_type_image ${props.card.name ? 'popup_opened' : ''}`}>

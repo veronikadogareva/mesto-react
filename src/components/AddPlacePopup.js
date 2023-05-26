@@ -1,8 +1,15 @@
 import React from 'react';
 import PopupWithForm from './PopupWithForm';
-function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
-    const [place, setPlace] = React.useState();
-    const [link, setLink] = React.useState();
+import { AppContext } from '../contexts/AppContext';
+function AddPlacePopup({ isOpen, onAddPlace }) {
+    const { isLoading, closeAllPopups } = React.useContext(AppContext);
+    const [place, setPlace] = React.useState('');
+    const [link, setLink] = React.useState('');
+    React.useEffect(() => {
+        setPlace('');
+        setLink('');
+    }, [isOpen]);
+
     function handleChangePlace(evt) {
         setPlace(evt.target.value);
     }
@@ -15,11 +22,9 @@ function AddPlacePopup({ isOpen, onClose, onAddPlace }) {
             title: place,
             link: link
         });
-        setPlace('');
-        setLink('');
     }
     return (
-        <PopupWithForm name='new-place' isOpen={isOpen} onClose={onClose} title='Новое место' textButton="Создать" onSubmit={handleSubmit}>
+        <PopupWithForm name='new-place' isOpen={isOpen} onClose={closeAllPopups} title='Новое место' textButton={isLoading ? 'Создание...' : 'Создать'} onSubmit={handleSubmit}>
             <input className="popup__input popup__input_info_title" id="place-input" name="title"
                 placeholder="Название" required minLength="2" maxLength="30" value={place} onChange={handleChangePlace} />
             <span className="popup__input-error place-input-error"></span>
